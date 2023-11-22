@@ -7,7 +7,7 @@ dotenv.config();
 const prisma = new PrismaClient();
 
 const generateToken = (user) => {
-	return jwt.sign({ id: user.userEmail }, process.env.JWT_SECRETE, {
+	return jwt.sign({ id: user.userId }, process.env.JWT_SECRETE, {
 		expiresIn: '1h',
 	});
 };
@@ -31,25 +31,25 @@ const getUser = async (userEmail, password) => {
 		where: {
 			userEmail: userEmail,
 		},
-        select: {
-            userEmail: true,
-            userId: true,
-            userPassword: true,
-        }
+		select: {
+			userEmail: true,
+			userId: true,
+			userPassword: true,
+		},
 	});
 
 	if (!user) {
 		throw Error('User not found');
 	}
 
-	const validPassword = await bcrypt.compare(password, user.userPassword)
+	const validPassword = await bcrypt.compare(password, user.userPassword);
 
 	if (!validPassword) {
-	    throw Error('Invalid password');
-	  }
+		throw Error('Invalid password');
+	}
 
 	const token = generateToken(user);
-	
+
 	return token;
 };
 
