@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  my-sql:
+    image: mysql:latest
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: mysql
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: blog-app
+    volumes:
+      - mysql-data:/var/lib/mysql/data
+  backend:
+    depends_on:
+      - my-sql
+    build:
+      dockerfile: dockerfile
+      context: .
+    environment:
+      # ENABLE_PRISMA_LOG: false
+      # SERVER_PORT: 3000
+      DATABASE_URL: 'mysql://mysql:123@my-sql:5432/blog-app'
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+volumes:
+  mysql-data:
+  node_modules:
