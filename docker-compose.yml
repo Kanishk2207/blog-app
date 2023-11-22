@@ -2,14 +2,19 @@ version: '3.8'
 services:
   my-sql:
     image: mysql:latest
+    restart: always
     ports:
-      - 5434:5432
+      - 3306:3306
     environment:
-      POSTGRES_USER: mysql
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: blog-app
+      MYSQL_ROOT_PASSWORD: "abcde"
+      MYSQL_DATABASE: blog-app
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: "abc"
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
     volumes:
-      - mysql-data:/var/lib/mysql/data
+      - mysql-data:/var/lib/mysql
   backend:
     depends_on:
       - my-sql
@@ -19,7 +24,7 @@ services:
     environment:
       # ENABLE_PRISMA_LOG: false
       # SERVER_PORT: 3000
-      DATABASE_URL: 'mysql://mysql:123@my-sql:5432/blog-app'
+      DATABASE_URL: 'mysql://mysql:abc@my-sql:3306/blog-app'
     ports:
       - '8000:8000'
     volumes:
