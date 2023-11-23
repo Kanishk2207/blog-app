@@ -9,13 +9,13 @@
 <h1 align="center">Blog Assignment</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/blog-assignment?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Kanishk2207/blog-assignment?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/blog-assignment?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Kanishk2207/blog-assignment?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/blog-assignment?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Kanishk2207/blog-assignment?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/blog-assignment?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/Kanishk2207/blog-assignment?color=56BEB8">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/blog-assignment?color=56BEB8" /> -->
 
@@ -50,19 +50,18 @@ Describe your project
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: RESTfull APIs;\
+:heavy_check_mark: database operations;\
+:heavy_check_mark: modularization and scalability;
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
+- [Docker](https://docs.docker.com/)
 - [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Prisma](https://www.prisma.io/docs)
+- [MySQL](https://www.mysql.com/)
 
 ## :white_check_mark: Requirements ##
 
@@ -77,21 +76,35 @@ $ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/blog-assignment
 # Access
 $ cd blog-assignment
 
+# development server
+$
+
+# build docker container
+$ docker compose up --build -d
+
+# start backend service(dev)
+$ docker compose up --build backend
+
+
+
 # Install dependencies
-$ yarn
+$ npm install
+
+# Generate prisma client
+$ prisma generate
 
 # Run the project
-$ yarn start
+$ npm start
 
-# The server will initialize in the <http://localhost:3000>
+# The server will initialize in the <http://localhost:8000>
 ```
 
 ## :memo: License ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from ISC. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/Kanishk2207" target="_blank">Kanishk Shrivastava</a>
 
 &#xa0;
 
